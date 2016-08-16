@@ -1,0 +1,21 @@
+{
+  "name": "boardgame",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Mathew Ostrander <mathew.ostrander@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/MAOstrander/monster-collector",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

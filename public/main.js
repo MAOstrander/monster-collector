@@ -33,5 +33,10 @@ angular.module("MyApp", [])
   }
 
   var testMonster = new Monster()
-  console.log(testMonster)
+  console.log(testMonster.rollAttack(1,0))
+  $scope.roll= function(){
+    console.log("hey",
+    testMonster.rollAttack(0,0)
+      )
+  }
 })

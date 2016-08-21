@@ -1,7 +1,8 @@
 "use strict";
 angular.module("MyApp", [])
 .controller("MainCtrl", function($scope){
-  $scope.world = "Testing things out"
+  $scope.world = "Testing things out";
+
 
 
   class Player {
@@ -34,7 +35,18 @@ angular.module("MyApp", [])
 
   var testMonster = new Monster()
   console.log(testMonster.rollAttack(1,0))
+
   $scope.roll= function(){
+    var currentSpace = document.getElementsByClassName("player")[0]
+    console.log("currentSpace", currentSpace);
+    var nextSpace = currentSpace;
+    for (var i = testMonster.rollAttack(0,0); i > 0; i--) {
+      console.log("i", i);
+      nextSpace = nextSpace.nextElementSibling;
+      console.log("nextSpace", nextSpace);
+    }
+    currentSpace.classList.remove("player")
+    nextSpace.classList.add("player");
     console.log("hey",
     testMonster.rollAttack(0,0)
       )

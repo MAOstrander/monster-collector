@@ -2,6 +2,7 @@
 <html ng-app="MyApp">
 <head>
   <title>Monster Collector Board Game Simulator!</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body ng-controller="MainCtrl">
   <h1>Journey across the land, searching far and wide</h1>
@@ -13,6 +14,25 @@
     <input type="text" ng-model="world">
     <button ng-click="roll()">Roll</button>
   </p>
+
+  <section id="board">
+    <div class="town player">Start</div>
+    <div class="wild">2</div>
+    <div class="wild">3</div>
+    <div class="wild">4</div>
+    <div class="wild">5</div>
+    <div class="town">6</div>
+    <div class="wild">7</div>
+    <div class="wild">8</div>
+    <div class="wild">9</div>
+    <div class="wild">10</div>
+    <div class="wild">11</div>
+    <div class="wild">12</div>
+    <div class="wild">13</div>
+    <div class="wild">14</div>
+    <div class="town">Finish</div>
+
+  </section>
 
 
   <script src="/bower_components/angular/angular.js"></script>

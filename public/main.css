@@ -1,0 +1,16 @@
+#board {
+  text-align: center;
+}
+
+.wild {
+  background-color: green;
+}
+
+.town {
+  background-color: gray;
+  border: 2px solid black;
+}
+
+.player {
+  border: 1px solid red;
+}

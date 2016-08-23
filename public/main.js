@@ -42,7 +42,9 @@ angular.module("MyApp", [])
     var nextSpace = currentSpace;
     for (var i = testMonster.rollAttack(0,0); i > 0; i--) {
       console.log("i", i);
-      nextSpace = nextSpace.nextElementSibling;
+      if (nextSpace.nextElementSibling) {
+        nextSpace = nextSpace.nextElementSibling;
+      }
       console.log("nextSpace", nextSpace);
     }
     currentSpace.classList.remove("player")

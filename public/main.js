@@ -2,7 +2,19 @@
 angular.module("MyApp", [])
 .controller("MainCtrl", function($scope){
   $scope.world = "Testing things out";
+  var board = ["town"]
 
+  function buildWild(spaces) {
+    for (var i = board.length; i < spaces; i++) {
+      board.push("wild")
+    }
+  }
+  buildWild(8)
+  board.push("town")
+
+  $scope.board = board;
+  console.log("board", board);
+  console.log("$scope.board", $scope.board);
 
 
   class Player {

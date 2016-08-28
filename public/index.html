@@ -16,7 +16,11 @@
   </p>
 
   <section id="board">
-    <div ng-repeat="space in board">thing</div>
+    <div ng-repeat="thing in board">
+      <div class="{{thing.space}}">
+        {{thing.name || thing.id}}
+      </div>
+    </div>
 
   </section>
 <!--     <div class="town player">Start</div>

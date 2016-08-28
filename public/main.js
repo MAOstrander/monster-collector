@@ -1,19 +1,10 @@
 "use strict";
 angular.module("MyApp", [])
-.controller("MainCtrl", function($scope){
+.controller("MainCtrl", function($scope, BoardFactory){
   $scope.world = "Testing things out";
-  var board = ["town"]
 
-  function buildWild(spaces) {
-    for (var i = board.length; i < spaces; i++) {
-      board.push("wild")
-    }
-  }
-  buildWild(8)
-  board.push("town")
 
-  $scope.board = board;
-  console.log("board", board);
+  $scope.board = BoardFactory.getBoard();
   console.log("$scope.board", $scope.board);
 
 
@@ -65,4 +56,33 @@ angular.module("MyApp", [])
     testMonster.rollAttack(0,0)
       )
   }
+})
+.factory("BoardFactory", function(){
+  var board = [
+    {
+      "id": 0,
+      "space": "town",
+      "name": "Starterville"
+    }
+  ]
+
+  function expandWild(spaces) {
+    for (var i = 0; i < spaces; i++) {
+      var newSpace = {
+        "id": board.length,
+        "space": "wild"
+      }
+      board.push(newSpace)
+    }
+  }
+  console.log("board", board);
+  expandWild(8)
+  console.log("board after expansion", board);
+
+  function getBoard() {
+    return board;
+  }
+
+  return {getBoard}
+
 })

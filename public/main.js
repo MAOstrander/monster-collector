@@ -1,6 +1,6 @@
 "use strict";
 angular.module("MyApp", [])
-.controller("MainCtrl", function($scope, BoardFactory){
+.controller("MainCtrl", ["$scope", "BoardFactory", function($scope, BoardFactory){
   $scope.world = "Testing things out";
 
 
@@ -56,7 +56,7 @@ angular.module("MyApp", [])
     testMonster.rollAttack(0,0)
       )
   }
-})
+}]) // End Main controller
 .factory("BoardFactory", function(){
   var board = [
     {
@@ -75,9 +75,20 @@ angular.module("MyApp", [])
       board.push(newSpace)
     }
   }
-  console.log("board", board);
+
+  function addTown(townName) {
+    var newSpace = {
+      "id": board.length,
+      "space": "town",
+      "name": townName || "Town"
+    }
+
+    board.push(newSpace)
+  }
+
   expandWild(8)
-  console.log("board after expansion", board);
+  addTown("Testropolis")
+  expandWild(4)
 
   function getBoard() {
     return board;

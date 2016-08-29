@@ -1,5 +1,19 @@
 "use strict";
-angular.module("MyApp", [])
+angular.module("MyApp", ["ngRoute"])
+.config(function ($routeProvider) {
+  $routeProvider
+  // .when("/", {
+  //   templateUrl: 'boards.html',
+  //   controller: "BoardsCtrl"
+  // })
+  // .when("/:spaceId", {
+  //   templateUrl: 'space.html',
+  //   controller: "spaceCtrl"
+  // })
+  .otherwise({
+    redirectTo: "/"
+  })
+})
 .controller("MainCtrl", ["$scope", "BoardFactory", function($scope, BoardFactory){
   $scope.world = "Testing things out";
 

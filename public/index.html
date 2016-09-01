@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MyApp">
+<html ng-app="BasicBoardgame">
 <head>
   <title>Monster Collector Board Game Simulator!</title>
   <link rel="stylesheet" type="text/css" href="main.css">
@@ -25,25 +25,21 @@
     </div>
 
   </section>
-<!--     <div class="town player">Start</div>
-    <div class="wild">2</div>
-    <div class="wild">3</div>
-    <div class="wild">4</div>
-    <div class="wild">5</div>
-    <div class="town">6</div>
-    <div class="wild">7</div>
-    <div class="wild">8</div>
-    <div class="wild">9</div>
-    <div class="wild">10</div>
-    <div class="wild">11</div>
-    <div class="wild">12</div>
-    <div class="wild">13</div>
-    <div class="wild">14</div>
-    <div class="town">Finish</div> -->
+
 
 
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-route/angular-route.js"></script>
-  <script src="/main.js"></script>
+
+  <script type="text/javascript" src="/app/main.js"></script>
+
+  <!-- Directives -->
+  <script type="text/javascript" src="/app/directives/singleSpace.js"></script>
+  <!-- Factories -->
+  <script type="text/javascript" src="/app/factories/boardFactory.js"></script>
+
+  <!-- Controllers -->
+  <script type="text/javascript" src="/app/controllers/mainCtrl.js"></script>
+
 </body>
 </html>
